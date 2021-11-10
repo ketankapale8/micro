@@ -34,6 +34,22 @@ const Users = new mongoose.Schema({
     isAdmin :{
          type: Boolean,
          default : false
+    },
+
+    position :{
+        type: String
+    },
+
+    salary : {
+        type : Number
+    },
+
+    jobtitle:{
+        type : String,
+    },
+
+    jobtype:{
+        type: String,
     }
 
 }, 

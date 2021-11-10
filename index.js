@@ -8,6 +8,9 @@ dotenv.config();
 const morgan = require('morgan');
 const helmet = require('helmet');
 const auth = require('../micro/routes/auth')
+const UserRoute = require('../micro/routes/users')
+
+
 
 
 mongoose.connect(process.env.MONGOURI , {useNewUrlParser : true}, ()=>{
@@ -22,7 +25,8 @@ app.use(morgan());
 
 
 //routes
-app.use('/auth' , auth)
+app.use('/auth' , auth);
+app.use('/users' , UserRoute)
 
 //static folder for joining 
 app.use(express.static(path.join(__dirname, 'public')))
